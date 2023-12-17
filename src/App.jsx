@@ -5,6 +5,7 @@ import FetchPost from './Components/FetchPost'
 import {Routes, Route, Link} from 'react-router-dom'
 import PostManager from './Components/PostManager'
 import PostLoader from './Components/PostLoader'
+import PostViewer from './Components/PostViewer'
 
 function App() {
   
@@ -25,6 +26,10 @@ function App() {
           <Link to="/post/2"> Carregar Post 2</Link>
           <Link to="/post/999"> Carregar Post 999</Link>
         </div> 
+        {/* 4 - my custom hooks com API PostViewer */}
+        <div>
+        <Link to="/post/view/1"> Carregar hook PostViewer 1</Link>
+        </div>
 
       </nav>
       <Routes>
@@ -35,7 +40,8 @@ function App() {
         <Route path='/posts' element={<PostManager/>} />
         {/* 3 - Tratamento de erros */}
         <Route path='/post/:postId' element={<PostLoader />} />
-
+        {/* 4 - my custom hooks com API PostViewer */}
+        <Route path='/post/view/:postId' element={<PostViewer />} />
       </Routes>
       
     </>
